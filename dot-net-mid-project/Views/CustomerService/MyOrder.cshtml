@@ -1,0 +1,47 @@
+﻿@model IEnumerable<dot_net_mid_project.Models.Order>
+
+@{
+    ViewBag.Title = "MyOrder";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+<h2>MyOrder</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.customer_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.order_place_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.delevery_address)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.customer_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.order_place_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.delevery_address)
+        </td>
+        <td>
+           <a href="/CustomerService/Details/@item.id" class="btn btn-info">Details</a>
+        </td>
+    </tr>
+}
+
+</table>

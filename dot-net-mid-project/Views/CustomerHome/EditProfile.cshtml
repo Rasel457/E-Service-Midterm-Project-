@@ -1,0 +1,54 @@
+﻿@model dot_net_mid_project.Models.VM.CuserModel
+@{
+    ViewBag.Title = "EditProfile";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+<h2 class="text-center">Edit Profile Information</h2>
+<center>
+    <form action="/CustomerHome/Update" method="post">
+        <table>
+            <tr>
+                <td></td>
+                <td> <input type="hidden" name="id" value="@Model.id" /></td>
+             
+            </tr>
+            <tr>
+                <td><label>Name</label></td>
+                <td> <input type="text" name="name" value="@Model.name" /></td>
+                @Html.ValidationMessageFor(m => m.name, "", new { @class = "text-danger" })
+               
+            </tr>
+            
+            <tr>
+                <td> <label>Phone</label></td>
+                <td><input type="text" name="phone" value="@Model.phone" /></td>
+                @Html.ValidationMessageFor(m => m.phone, "", new { @class = "text-danger" })
+            </tr>
+            <tr>
+                <td><label>Email</label></td>
+                <td><input type="email" name="email" value="@Model.email" /></td>
+                @Html.ValidationMessageFor(m => m.email, "", new { @class = "text-danger" })
+            </tr>
+            <tr>
+                <td> <label>Password</label></td>
+                <td><input type="text" name="password" value="@Model.password" /></td>
+                @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger" })
+            </tr>
+            <tr>
+                <td><label>House</label></td>
+                <td><input type="text" name="house" value="@Model.house" /></td>
+                @Html.ValidationMessageFor(m => m.house, "", new { @class = "text-danger" })
+            </tr>
+            <tr>
+                <td> <label>Road</label></td>
+                <td><input type="text" name="road" value="@Model.road" /></td>
+                @Html.ValidationMessageFor(m => m.road, "", new { @class = "text-danger" })
+            </tr>
+
+        </table>
+        <br />
+        <input type="Submit" value="Update" class="btn btn-success " />
+    </form>
+</center>
+

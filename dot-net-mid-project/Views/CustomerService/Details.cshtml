@@ -1,0 +1,41 @@
+﻿@model dot_net_mid_project.Models.Order
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+<h3><b>Status :@Model.status</b></h3>
+<h3><b>Delivary Address:@Model.delevery_address</b></h3>
+<h3><b class="text-center">Grand Total Charge: @ViewBag.totalPrice</b></h3>
+<br />
+<h2>Details Information</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Service Name</th>
+        <th>Employee Name</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Total Price</th>
+
+    </tr>
+    
+    @foreach (var s in Model.Order_Details)
+    {
+        int i = 1 + ViewBag.value;
+
+
+        <tr>
+            <td>@s.Service.name</td>
+            <td>@s.Employee.User.name</td>
+            <td>@s.unit_price</td>
+            <td>@s.quantity</td>
+            <td>@ViewBag.Array[i]</td>
+
+        </tr>
+        ViewBag.value = ViewBag.value + 1;
+
+    }
+
+
+</table>

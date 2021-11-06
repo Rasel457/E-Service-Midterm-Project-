@@ -1,0 +1,63 @@
+﻿@model IEnumerable<dot_net_mid_project.Models.Service>
+
+@{
+    ViewBag.Title = "AllServices";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+<h2>AllServices</h2>
+<center>
+    <form method="post" action="/CustomerService/Search">
+        <font size = "5" >Choose Catagory</font>
+        <select name="type" style="width: 145px; height: 45px; font-size:18px; border-radius: 6px;">
+            <option>Please select </option>
+            <option value="Device Service">Device Service</option>
+            <option value="Shifting">Shifting</option>
+            <option value="Home Cleaning">Home Cleaning</option>
+        </select>
+
+        <input style="width: 80px; height: 45px; font-size:20px; border-radius: 6px;" type="submit" class="btn btn-primary" value="Search">
+    </form>
+</center>
+<br /><br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.details)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.type)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.details)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.type)
+        </td>
+    </tr>
+}
+
+</table>

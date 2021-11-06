@@ -1,0 +1,39 @@
+﻿@model dot_net_mid_project.Models.VM.CuserModel
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+<h2 class="text-center">My Profile Information</h2>
+<a href="/CustomerHome/EditProfile" class="btn btn-danger">Edit</a>
+
+<center>
+
+    <table class="table table-hover w-50">
+        <tr>
+            <td>Name</td>
+            <td>@Model.name</td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td>@Model.phone</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>@Model.email</td>
+        </tr>
+
+        <tr>
+            <td>House</td>
+            <td>@Model.house</td>
+        </tr>
+
+        <tr>
+            <td>Road</td>
+            <td>@Model.road</td>
+        </tr>
+
+
+    </table>
+</center>
+
