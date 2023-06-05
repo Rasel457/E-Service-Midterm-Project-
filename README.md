@@ -1,1 +1,1 @@
-# E-Service-Midterm-Project-
+This project based on a platform that offers user services at their doorstep. Common feature of all users to performs all CRUD operations, Login to/Logout of the system, searching and password resets for account. Admin can control service availability. Manager can compute costs and revenues and display various graph charts. Customers can browse the services offered, select a service, pay for service, and review a service. Service providers can see the allocated timetable and accept payments via wallet.
